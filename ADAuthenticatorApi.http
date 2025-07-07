@@ -1,0 +1,6 @@
+@ADAuthenticatorApi_HostAddress = http://localhost:5249
+
+GET {{ADAuthenticatorApi_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
