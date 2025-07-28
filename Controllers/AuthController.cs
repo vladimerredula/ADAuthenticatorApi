@@ -40,7 +40,7 @@ namespace ADAuthenticatorApi.Controllers
             if (!success)
                 return Unauthorized(new { Message = "Invalid credentials" });
 
-            var token = _jwtService.GenerateToken(request.Username, attributes);
+            var token = _jwtService.GenerateToken(decryptedUsername, attributes);
 
             return Ok(new { Token = token });
         }
