@@ -39,6 +39,9 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
         };
     });
 
+// Listen on port 80
+builder.WebHost.UseUrls("http://0.0.0.0:80");
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -49,7 +52,7 @@ if (app.Environment.IsDevelopment())
 app.UseSwagger();
 app.UseSwaggerUI();
 
-app.UseHttpsRedirection();
+//app.UseHttpsRedirection();
 
 app.UseAuthentication();
 app.UseAuthorization();
